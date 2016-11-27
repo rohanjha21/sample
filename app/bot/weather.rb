@@ -1,10 +1,12 @@
 # bot.rb
 require 'facebook/messenger'
-Facebook::Messenger.configure do |config|
-  config.access_token = ENV['PAGE_ACCESS_TOKEN']
-  config.verify_token = ENV['VERIFY_TOKEN']
-end
 include Facebook::Messenger
+
+# Facebook::Messenger.configure do |config|
+#   # config.access_token = ENV['PAGE_ACCESS_TOKEN']
+#   # config.verify_token = ENV['VERIFY_TOKEN']
+#   config.provider = Configuration::Providers::Environment.new
+# end
 
 Bot.on :message do |message|
   message.id          # => 'mid.1457764197618:41d102a3e1ae206a38'

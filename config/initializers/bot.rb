@@ -9,4 +9,5 @@ unless Rails.env.production?
   end
 
   bot_files.each { |file| require_dependency file }
+  #Dir["#{Rails.root}/app/bot/**/*.rb"].each{|file| require file}
 end
